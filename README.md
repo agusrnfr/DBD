@@ -13,3 +13,6 @@ Ejercicios de "Diseño de Base de Datos"
 * [**Ejercicio 5-2**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%201/Ejercicio_5_2.png)
 * [**Ejercicio 5-3**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%201/Ejercicio_5_3.png)
 * [**Ejercicio 6**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%201/Ejercicio_6.png)
+* [**Ejercicio 7**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%201/Ejercicio_7.png)
+* [**Ejercicio 8**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%201/Ejercicio_8.png)
+* [**Ejercicio 9**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%201/Ejercicio_9.png)
