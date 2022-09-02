@@ -24,3 +24,5 @@ Ejercicios de "Diseño de Base de Datos"
 * [**Ejercicio 3**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Ejercicio3)
 * [**Ejercicio 4**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Ejercicio4)
 * [**Ejercicio 5**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Ejercicio5)
+* [**Ejercicio 64**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Ejercicio6)
+* [**Ejercicio 7**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Ejercicio7)
