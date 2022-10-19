@@ -41,3 +41,20 @@ Ejercicios de "Diseño de Base de Datos"
 * [**Ejercicio 6**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Parte2/Ejercicio1)
 * [**Ejercicio 7**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Parte2/Ejercicio7)
 * [**Ejercicio 8**](https://github.com/agusrnfr/DBD/tree/main/PRACTICA%202/Parte2/Ejercicio8)
+
+### **Práctica 3**
+  *ENUNCIADOS PRÁCTICA 3* [↺](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/DBD%202022-%20Pr%C3%A1ctica%203.pdf)
+* [**Ejercicio 1**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio1.pdf)
+* [**Ejercicio 2**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio2.pdf)
+* [**Ejercicio 3**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio3.pdf)
+* [**Ejercicio 4**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio4.pdf)
+* [**Ejercicio 5**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio5.pdf)
+* [**Ejercicio 6**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio6.pdf)
+* [**Ejercicio 7**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio7.pdf)
+* [**Ejercicio 8**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio8.pdf)
+* [**Ejercicio 9**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio9.pdf)
+* [**Ejercicio 10**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio10.pdf)
+
+### **Práctica 4**
+  *ENUNCIADOS PRÁCTICA 4* [↺]()
+* [**Ejercicio 1**]()
