@@ -56,5 +56,5 @@ Ejercicios de "Diseño de Base de Datos"
 * [**Ejercicio 10**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio10.pdf)
 
 ### **Práctica 4**
-  *ENUNCIADOS PRÁCTICA 4* [↺]()
-* [**Ejercicio 1**]()
+  *ENUNCIADOS PRÁCTICA 4* [↺](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/DBD%202022-%20Pr%C3%A1ctica%204.pdf)
+* [**Ejercicio 1**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio1.sql)
