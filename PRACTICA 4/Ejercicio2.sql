@@ -71,7 +71,7 @@ WHERE c.DNI IN (
         SELECT a.RAZON_SOCIAL
         FROM AGENCIA a
         EXCEPT (
-            SELECT v2.DNI
+            SELECT a.RAZON_SOCIAL
             FROM VIAJE v2, AGENCIA a2
             WHERE (v2.RAZON_SOCIAL = a2.RAZON_SOCIAL) AND (v.DNI = v2.DNI)
         )
@@ -85,10 +85,10 @@ UPDATE CLIENTE SET telefono="221-4400897" WHERE DNI="38495444"
 /* 8. Listar razon_social, dirección y teléfono de la/s agencias que tengan mayor cantidad de
 viajes realizados. */
 
-SELECT a.RAZON_SOCIAL, a.direccion, a.telef, COUNT(*) as Suma
+SELECT a.RAZON_SOCIAL, a.direccion, a.telef
 FROM AGENCIA a INNER JOIN VIAJE v ON (a.RAZON_SOCIAL = v.RAZON_SOCIAL)
 GROUP BY v.RAZON_SOCIAL, v.direccion, v.telef
-HAVING Suma >= ALL (
+HAVING COUNT(*) >= ALL (
     SELECT COUNT(*)
     FROM VIAJE v
     GROUP BY v.RAZON_SOCIAL
@@ -96,10 +96,10 @@ HAVING Suma >= ALL (
 
 /* 9. Reportar nombre, apellido, dirección y teléfono de clientes con al menos 10 viajes. */
 
-SELECT c.nombre, c.apellido, c.telefono, COUNT(*) as Suma
+SELECT c.nombre, c.apellido, c.telefono
 FROM CLIENTE c INNER JOIN VIAJE v ON (c.DNI = v.DNI)
 GROUP BY c.nombre, c.apellido, c.telefono
-HAVING Suma >= 10
+HAVING COUNT(*) >= 10
 )
 
 /* 10. Borrar al cliente con DNI 40325692. */
