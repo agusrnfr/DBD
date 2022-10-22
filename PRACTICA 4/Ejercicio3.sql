@@ -113,7 +113,7 @@ WHERE j.DNI IN (
         SELECT c.codigoClub
         FROM Club c
         EXCEPT (
-            SELECT c2.codigoClub
+            SELECT cj2.codigoClub
             FROM ClubJugador cj2, Club c2 
             WHERE (cj2.codigoClub = c2.codigoClub) AND (cj.DNI = cj2.DNI)
         )

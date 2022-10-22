@@ -71,7 +71,7 @@ WHERE c.DNI IN (
         SELECT a.RAZON_SOCIAL
         FROM AGENCIA a
         EXCEPT (
-            SELECT a.RAZON_SOCIAL
+            SELECT v2.RAZON_SOCIAL
             FROM VIAJE v2, AGENCIA a2
             WHERE (v2.RAZON_SOCIAL = a2.RAZON_SOCIAL) AND (v.DNI = v2.DNI)
         )

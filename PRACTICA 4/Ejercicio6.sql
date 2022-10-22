@@ -116,7 +116,7 @@ WHERE NOT EXIST (
     SELECT rr.codRep
     FROM RepuestoReparacion rr
     EXCEPT (
-        SELECT rr2.codRep
+        SELECT r2.codRep
         FROM Repuesto r2, RepuestoReparacion rr2
         WHERE (r2.codRep = rr2.codRep) AND (r2.codRep = r.codRep)
     )
