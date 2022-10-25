@@ -5,7 +5,7 @@ Detalle(nroTicket, idProducto, cantidad, preciounitario)
 Producto(idProducto, descripcion, precio, nombreP, stock)*/
 
 /*¿Habria que poner distict en la mayoria?, ya que un cliente puede tener varias facturas, 
-y una factura puede tener varios detalles de distintos prod*/
+y una factura puede tener varios detalles de distintos prod --> YA LO CONSULTE Y ME DIJO QUE NO, QUE DE ESO SE ENCARGA EL INNER JOIN*/
 
 /*1. Listar datos personales de clientes cuyo apellido comience con el string ‘Pe’. Ordenar por DNI*/
 
@@ -119,8 +119,8 @@ INNER JOIN Cliente c ON (f.idCliente =  c.idCliente)
 WHERE (nombreP="Z")
 )
 
-/* ESTA BIEN --> WHERE (nombre="Jorge") AND (apellido="Perez") AND (nombreP  <> "Z")
-No se si estaria bien dado que pueden haber productos naturales donde la factura "321" coincida con el detalle "142" y el producto no sea Z
+/* WHERE (nombre="Jorge") AND (apellido="Perez") AND (nombreP  <> "Z")
+No esta bien dado que pueden haber productos naturales donde la factura "321" coincida con el detalle "142" y el producto no sea Z
 pero en otro la factura "321" coincida con el detalle "132" y el producto si es Z*/
 
 /*10. Listar DNI, apellido y nombre de clientes donde el monto total comprado, teniendo en cuenta todas sus facturas, supere $10.000.000.*/

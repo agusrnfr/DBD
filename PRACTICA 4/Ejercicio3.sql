@@ -7,7 +7,7 @@ ClubJugador(codigoClub, DNI, desde, hasta) */
 /* 1. Reportar nombre y anioFundacion de aquellos clubes de la ciudad de La Plata que no
 poseen estadio. */
 
---Consultar
+--CONSULTAR
 
 SELECT c.nombre, c.anioFundacion
 FROM Club c 
@@ -73,11 +73,8 @@ WHERE j.edad > 29 AND ciu.nombre = "Cordoba"
 /* 5. Mostrar para cada club, nombre de club y la edad promedio de los jugadores que juegan
 actualmente en cada uno. */
 
---Tengo que tener en cuenta los clubs sin jugadores??, Si es asi debeberia hacer un LEFT JOIN en Club c con ClubJugador
--- En el group by pongo codigoClub porque 2 clubes pueden tener el mismo nombre
-
 SELECT c.nombre, AVG(j.edad) as Promedio
-FROM Club c INNER JOIN ClubJugador cj ON (c.codigoClub = cj.codigoClub)
+FROM Club c LEFT JOIN ClubJugador cj ON (c.codigoClub = cj.codigoClub)
     INNER JOIN Jugador j ON (cj.DNI = j.DNI)
 WHERE cj.hasta IS NULL
 GROUP BY c.codigoClub, c.nombre
@@ -124,8 +121,6 @@ WHERE j.DNI IN (
 pertenece a la ciudad de Berisso. Puede asumir que el codigoClub 1234 no existe en la
 tabla Club.
  */
-
---Esta bien lo de codigo de ciudad?
 
  INSERT INTO Club (codigoClub, nombre, anioFundacion, codigoCiudad(FK))
  VALUES (1234,"Estrella de Berisso","1921",(

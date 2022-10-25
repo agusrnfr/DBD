@@ -62,7 +62,7 @@ WHERE NOT EXIST (
     FROM Laguna l
     EXCEPT ( 
         SELECT l2.nroLaguna
-        FROM Inscripcion ins2 INNER JOIN TorneoPesca2 tp2 ON (ins2.codTorneo = tp2.codTorneo) 
+        FROM Inscripcion ins INNER JOIN TorneoPesca tp ON (ins2.codTorneo = tp2.codTorneo) 
             INNER JOIN Laguna l2 ON (tp2.nroLaguna = l.nroLaguna)
         WHERE (e.codigoE = ins2.codigoE)
     )
@@ -93,8 +93,6 @@ WHERE l.nroLaguna NOT IN (
 
 /* 8. Reportar nombre, y descripción de equipos que tengan inscripciones a torneos a disputarse
 durante 2019, pero no tienen inscripciones a torneos de 2018. */
-
---Ya me viene pasando esto varias veces donde no se cual es mejor xd
 
 --Solucion 1
 

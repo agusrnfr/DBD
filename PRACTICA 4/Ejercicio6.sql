@@ -4,9 +4,6 @@ Repuesto (codRep, nombre, stock, precio) // repuestos
 RepuestoReparacion (nroReparac, codRep, cantidad, precio) //repuestos utilizados en
 reparaciones.
 Reparación (nroReparac, codTec, precio_total, fecha) //reparaciones realizadas. */
-
---DISTINCT PORQUE LAS REPARACIONES SE PUEDEN REPETIR?
-
 /* 1. Listar todos los repuestos, informando el nombre, stock y precio. Ordenar el
 resultado por precio. */
 
@@ -31,8 +28,6 @@ EXCEPT (
 
 /* 3. Listar el nombre, especialidad de técnicos que no participaron en ninguna
 reparación. Ordenar por nombre ascendentemente. */
-
---Ta bien?
 
 SELECT t.nombre, t.especialidad
 FROM Tecnico t
@@ -66,8 +61,6 @@ GROUP BY r.codRep, r.nombre, r.stock
 
 /* 6. Listar nombre y especialidad del técnico con mayor cantidad de reparaciones
 realizadas y el técnico con menor cantidad de reparaciones. */
-
---Cuento a los que no tienen reparaciones?, si es asi deberia cambiar lo que esta despues de all
 
 SELECT t.nombre, t.especialidad
 FROM Tecnico t INNER JOIN Reparacion repa (t.codTec = repa.codTec)

@@ -3,11 +3,9 @@ Localidad(CodigoPostal, nombreL, descripcion, #habitantes)
 Arbol(nroArbol, especie, años, calle, nro, codigoPostal(fk))
 Podador(DNI, nombre, apellido, telefono,fnac,codigoPostalVive(fk))
 Poda(codPoda,fecha, DNI(fk),nroArbol(fk)) */
-
---Esta bien usar distinct porque puede haber varias podas de un mismo arbol?
-
 /* 1. Listar especie, años, calle, nro. y localidad de árboles podados por el podador ‘Juan Perez’ y
 por el podador ‘Jose Garcia’. */
+
 
 
 --Solucion 1
@@ -67,9 +65,7 @@ WHERE po.nroArbol IS NULL
 /* 4. Reportar especie, años,calle, nro y localidad de árboles que fueron podados durante 2017 y
 no fueron podados durante 2018. */
 
---DISTINCT PORQUE PUDO HABER SIDO PODADO VARIAS VECES
-
-SELECT DISTINCT a.especie, a.años, a.calle, a.nro, l.nombreL
+SELECT a.especie, a.años, a.calle, a.nro, l.nombreL
 FROM Arbol a INNER JOIN Localidad l ON (a.codigoPostal = l.CodigoPostal)
     INNER JOIN Poda po ON (a.nroArbol = po.nroArbol)
 WHERE (po.fecha BETWEEN "01/01/2017" AND "31/12/2017") AND a.nroArbol NOT IN(
@@ -82,12 +78,12 @@ WHERE (po.fecha BETWEEN "01/01/2017" AND "31/12/2017") AND a.nroArbol NOT IN(
 
 --Solucion 3
 
-SELECT DISTINCT a.especie, a.años, a.calle, a.nro, l.nombreL
+SELECT a.especie, a.años, a.calle, a.nro, l.nombreL
 FROM Arbol a INNER JOIN Localidad l ON (a.codigoPostal = l.CodigoPostal)
     INNER JOIN Poda po ON (a.nroArbol = po.nroArbol)
 WHERE (po.fecha BETWEEN "01/01/2017" AND "31/12/2017") A
 EXCEPT (
-    SELECT DISTINCT a.especie, a.años, a.calle, a.nro, l.nombreL
+    SELECT a.especie, a.años, a.calle, a.nro, l.nombreL
     FROM ARBOL a INNER JOIN Localidad l ON (a.codigoPostal = l.CodigoPostal)
         INNER JOIN Poda po ON (a.nroArbol = po.nroArbol)
     WHERE po.fecha BETWEEN "01/01/2017" AND "31/12/2017") 
@@ -123,9 +119,9 @@ WHERE NOT EXIST (
 /* 7. Listar especie de árboles que se encuentren en la localidad de ‘La Plata’ y también en la
 localidad de ‘Salta’. */
 
-(SELECT DISTINCT a.especie
+SELECT DISTINCT a.especie
 FROM Arbol a INNER JOIN Localidad l ON (a.codigoPostal = l.CodigoPostal)
-WHERE l.nombreL = "La Plata")
+WHERE l.nombreL = "La Plata"
 INTERSECT 
 (SELECT DISTINCT a.especie
 FROM Arbol a INNER JOIN Localidad l ON (a.codigoPostal = l.CodigoPostal)

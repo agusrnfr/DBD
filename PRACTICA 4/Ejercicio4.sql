@@ -51,8 +51,6 @@ ORDER BY p.Apellido
 /* 5. Listar el DNI, Apellido, Nombre y Matrícula de aquellos profesores que posean más de 3
 títulos. Dicho listado deberá estar ordenado por Apellido y Nombre. */
 
---Esta bien?
-
 SELECT p.DNI, per.Apellido, per.Nombre, p.Matricula
 FROM PROFESOR p INNER JOIN PERSONA per ON (p.DNI = per.DNI) 
     INNER JOIN TITULO-PROFESOR tp ON (per.DNI = tp.DNI)
@@ -63,8 +61,6 @@ ORDER BY per.Apellido, per.Nombre
 /* 6. Listar el DNI, Apellido, Nombre, Cantidad de horas y Promedio de horas que dicta cada
 profesor. La cantidad de horas se calcula como la suma de la duración de todos los
 cursos que dicta. */
-
---Debo considerar a los profesores que no dictan Cursos?
 
 SELECT p.DNI, per.Apellido, per.Nombre, SUM (c.Duracion), AVG (c.Duracion)
 FROM PROFESOR p INNER JOIN PERSONA per ON (p.DNI = per.DNI)

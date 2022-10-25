@@ -83,7 +83,7 @@ WHERE (e.cubierto = true) AND (r.fecha BETWEEN "01/01/2018" AND "31/12/2018")
 
 /* 8. Reportar para cada escenario, nombre del escenario y cantidad de recitales durante 2018. */
 
---Debo tener en cuenta que no hubo recitales para un escenario si no lo menciona?
+--SI NO MENCIONA TENER EN CUENTA A LOS QUE NO TUVIERON --> NO TENERLOS
 
 SELECT e.nombre_escenario, COUNT(*) as Cantidad
 FROM Escenario e LEFT JOIN Recital r ON (e.nroEscenario = r.nroEscenario)
