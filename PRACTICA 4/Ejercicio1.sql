@@ -80,7 +80,7 @@ INNER JOIN Factura f ON (d.nroTicket = f.nroTicket)
 INNER JOIN Cliente c ON (f.idCliente =  c.idCliente)
 WHERE  (nombreP = "prod2")))
 EXCEPT(
-SELECT c.idCliente
+SELECT nombre, apellido, DNI, telefono
 FROM Producto p 
 INNER JOIN Detalle d ON (p.idProducto = d.idProducto)
 INNER JOIN Factura f ON (d.nroTicket = f.nroTicket) 
