@@ -55,7 +55,9 @@ Ejercicios de "Diseño de Base de Datos"
 * [**Ejercicio 9**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio9.pdf)
 * [**Ejercicio 10**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%203/Ejercicio10.pdf)
 
-*NOTA: Cuando habla de "actuales" o "finalizados" la fecha_Hasta debe ser mayor o menor a la fecha actual segun corresponda, NO SE DEBE comparar con NULL
+*NOTAS: 
+1. Cuando habla de "actuales" o "finalizados" la fecha_Hasta debe ser mayor o menor a la fecha actual segun corresponda, NO SE DEBE comparar con NULL.
+2. Hay algunos ejercicios que podrian estar hechos de mejor manera.
  
 ### **Práctica 4**
   *ENUNCIADOS PRÁCTICA 4* [↺](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/DBD%202022-%20Pr%C3%A1ctica%204.pdf)
@@ -65,3 +67,11 @@ Ejercicios de "Diseño de Base de Datos"
 * [**Ejercicio 4**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio4.sql)
 * [**Ejercicio 5**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio5.sql)
 * [**Ejercicio 6**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio6.sql)
+* [**Ejercicio 7**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio7.sql)
+* [**Ejercicio 8**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio8.sql)
+* [**Ejercicio 9**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio9.sql)
+* [**Ejercicio 10**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio10.sql)
+* [**Ejercicio 11**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio11.sql)
+* [**Ejercicio 12**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio12.sql)
+* [**Ejercicio 13**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio13.sql)
+* [**Ejercicio 14**](https://github.com/agusrnfr/DBD/blob/main/PRACTICA%204/Ejercicio14.sql)
