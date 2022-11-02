@@ -14,12 +14,12 @@ SELECT a.RAZON_SOCIAL, a.direccion, a.telef
 FROM VIAJE v 
     INNER JOIN AGENCIA a ON (v.razon_social = a.razon_social)
     INNER JOIN Cliente c ON (v.DNI = c.DNI)
-WHERE v.RAZON_SOCIAL IN (
+WHERE (c.apellido = "Roma") AND (v.RAZON_SOCIAL IN (
     SELECT v.RAZON_SOCIAL
     FROM VIAJE v INNER JOIN CIUDAD c ON(v.cpOrigen = c.CODIGOPOSTAL)
     WHERE c.nombreCiudad = "La Plata"
+))
 ORDER BY v.RAZON_SOCIAL, v.telef
-)
 
 /* 2. Listar fecha, hora, datos personales del cliente, ciudad origen y destino de viajes realizados
 en enero de 2019 donde la descripción del viaje contenga el String ‘demorado’. */

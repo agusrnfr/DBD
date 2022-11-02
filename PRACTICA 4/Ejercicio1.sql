@@ -125,8 +125,8 @@ pero en otro la factura "321" coincida con el detalle "132" y el producto si es 
 
 /*10. Listar DNI, apellido y nombre de clientes donde el monto total comprado, teniendo en cuenta todas sus facturas, supere $10.000.000.*/
 
-SELECT c.DNI, c.apellido, c.nombre, SUM (f.total) as suma
+SELECT c.DNI, c.apellido, c.nombre
 FROM Factura f 
 INNER JOIN Cliente c ON (f.idCliente =  c.idCliente)
 GROUP BY c.DNI, c.apellido, c.nombre
-HAVING suma > 10000000
+HAVING SUM (f.total) > 10000000
