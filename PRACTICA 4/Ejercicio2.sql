@@ -42,12 +42,14 @@ WHERE (a.email LIKE "%@jmail.com") OR (v.fecha BETWEEN "01/01/2019" and "31/12/2
 Brandsen’ */
 
 
-SELECT *
-FROM Cliente c INNER JOIN Ciudad c ON(c.cpDestino = ciu.CODIGOPOSTAL)
+SELECT c.DNI, c.nombre, c.apellido, c.telefono, c.direccion
+FROM Cliente c INNER JOIN Viaje v ON (c.DNI = v.DNI)
+    INNER JOIN Ciudad ciu ON(v.cpDestino = ciu.CODIGOPOSTAL)
 WHERE ciu.nombreCiudad = "Coronel Brandsen" 
 EXCEPT (
-    SELECT *
-    FROM Cliente c INNER JOIN Ciudad c ON(c.cpDestino = ciu.CODIGOPOSTAL)
+    SELECT c.DNI, c.nombre, c.apellido, c.telefono, c.direccion
+    FROM Cliente c INNER JOIN Viaje v ON (c.DNI = v.DNI)
+        INNER JOIN Ciudad ciu ON(v.cpDestino = ciu.CODIGOPOSTAL)
     WHERE NOT (ciu.nombreCiudad = "Coronel Brandsen")
 )
 
@@ -78,6 +80,20 @@ WHERE c.DNI IN (
     )
 )
 
+--
+SELECT c.nombre, c.apellido, c.direccion, c.telefono
+FROM Cliente c
+WHERE NOT EXIST (
+    SELECT *
+    FROM Agencia a
+    WHERE NOT EXIST (
+        SELECT *
+        FROM Viaje v 
+        WHERE (a.razon_social = v.razon_social) AND (v.DNI = c.DNI)
+    )
+)
+
+
 /* 7. Modificar el cliente con DNI: 38495444 actualizando el teléfono a: 221-4400897. */
 
 UPDATE CLIENTE SET telefono="221-4400897" WHERE DNI="38495444"
@@ -100,7 +116,7 @@ SELECT c.nombre, c.apellido, c.telefono
 FROM CLIENTE c INNER JOIN VIAJE v ON (c.DNI = v.DNI)
 GROUP BY c.nombre, c.apellido, c.telefono
 HAVING COUNT(*) >= 10
-)
+
 
 /* 10. Borrar al cliente con DNI 40325692. */
 
