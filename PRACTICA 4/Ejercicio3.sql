@@ -117,6 +117,20 @@ WHERE j.DNI IN (
     )
 )
 
+-- 
+
+SELECT j.nombre, j.apellido
+FROM Jugador j
+WHERE NOT EXIST (
+    SELECT *
+    FROM Club c 
+    WHERE NOT EXIST (
+        SELECT *
+        FROM ClubJugador cj 
+        WHERE (cj.codigoClub = c.codigoClub) AND (cj.DNI = j.DNI)
+    )
+)
+
 /* 9. Agregar con codigoClub 1234 el club “Estrella de Berisso” que se fundó en 1921 y que
 pertenece a la ciudad de Berisso. Puede asumir que el codigoClub 1234 no existe en la
 tabla Club.
@@ -127,5 +141,5 @@ tabla Club.
     SELECT c.codigoCiudad
     FROM Ciudad 
     WHERE Ciudad.nombre = "Berisso"
- )
+    )
  )
