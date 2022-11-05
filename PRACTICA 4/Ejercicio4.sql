@@ -45,8 +45,19 @@ FROM ALUMNO a INNER JOIN PERSONA p ON (a.DNI = p.DNI)
     INNER JOIN PROFESOR-CURSO pc ON (ac.Cod_Curso = pc.Cod_Curso)
     INNER JOIN Profesor prof ON (pc.DNI = prof.DNI)
     INNER JOIN Persona p2 ON (prof.DNI = p2.DNI)
-WHERE (ac.Calificacion > 9) AND (p2.Nombre = "Juan Garcia")
+WHERE (ac.Calificacion > 9) AND (p2.Nombre = "Juan") AND (p2.Apellido = "Garcia")
 ORDER BY p.Apellido
+
+-- Podria omitir a profesor y que sea directamente 
+/*
+SELECT a.DNI, p.Apellido, p.Nombre, ac.Calificación
+FROM ALUMNO a INNER JOIN PERSONA p ON (a.DNI = p.DNI)
+    INNER JOIN ALUMNO-CURSO ac ON (a.DNI = ac.DNI)
+    INNER JOIN PROFESOR-CURSO pc ON (ac.Cod_Curso = pc.Cod_Curso)
+    INNER JOIN Persona p2 ON (pc.DNI = p2.DNI)
+WHERE (ac.Calificacion > 9) AND (p2.Nombre = "Juan") AND (p2.Apellido = "Garcia")
+ORDER BY p.Apellido
+*/
 
 /* 5. Listar el DNI, Apellido, Nombre y Matrícula de aquellos profesores que posean más de 3
 títulos. Dicho listado deberá estar ordenado por Apellido y Nombre. */
@@ -64,8 +75,8 @@ cursos que dicta. */
 
 SELECT p.DNI, per.Apellido, per.Nombre, SUM (c.Duracion), AVG (c.Duracion)
 FROM PROFESOR p INNER JOIN PERSONA per ON (p.DNI = per.DNI)
-    INNER JOIN PROFESOR-CURSO pc ON(p.DNI = pc.DNI)
-    INNER JOIN CURSO c ON (pc.Cod_Curso = c.Cod_Curso)
+    LEFT JOIN PROFESOR-CURSO pc ON(p.DNI = pc.DNI)
+    LEFT JOIN CURSO c ON (pc.Cod_Curso = c.Cod_Curso)
 GROUP BY p.DNI, per.Apellido, per.Nombre
 
 /* 7. Listar Nombre, Descripción del curso que posea más alumnos inscriptos y del que posea
@@ -73,26 +84,28 @@ menos alumnos inscriptos durante 2019. */
 
 --Los listo juntos o separados?
 
-SELECT c.Nombre, c.Descripción
+(SELECT c.Nombre, c.Descripción
 FROM CURSO c INNER JOIN ALUMNO-CURSO ac ON (c.Cod_Curso = ac.Cod_Curso)
 WHERE ac.Año = "2019"
-GROUP BY c.Nombre, c.Descripción
+GROUP BY c.Cod_Curso, c.Nombre, c.Descripción
 HAVING COUNT(*) >= ALL (
     SELECT COUNT (*)
     FROM ALUMNO-CURSO ac
     WHERE ac.Año = "2019"
     GROUP BY ac.Cod_Curso
 )
-
-SELECT c.Nombre, c.Descripción
+)
+UNION
+(SELECT c.Nombre, c.Descripción
 FROM CURSO c INNER JOIN ALUMNO-CURSO ac ON (c.Cod_Curso = ac.Cod_Curso)
 WHERE ac.Año = "2019"
-GROUP BY c.Nombre, c.Descripción
+GROUP BY c.Cod_Curso, c.Nombre, c.Descripción
 HAVING COUNT(*) <= ALL (
     SELECT COUNT (*)
     FROM ALUMNO-CURSO ac
     WHERE ac.Año = "2019"
     GROUP BY ac.Cod_Curso
+)
 )
 
 /* 8. Listar el DNI, Apellido, Nombre, Legajo de alumnos que realizaron cursos con nombre
@@ -124,7 +137,7 @@ VALUES (25,"44124642","22/10/2022")
 /* 10. Modificar el estado civil del alumno cuyo legajo es ‘2020/09’, el nuevo estado civil es
 divorciado. */
 
-UPDATE PERSONA SET Estado_Civil="divorciado" WHERE DNI=(SELECT a.DNI FROM ALUMNO a WHERE a.Legajo="2020/09")
+UPDATE PERSONA SET Estado_Civil="divorciado" WHERE DNI IN (SELECT a.DNI FROM ALUMNO a WHERE a.Legajo="2020/09")
 
 /* 11. Dar de baja el alumno con DNI 30568989. Realizar todas las bajas necesarias para no
 dejar el conjunto de relaciones en estado inconsistente.
