@@ -1,0 +1,34 @@
+3-Dado el siguiente modelo físico, resolver:
+
+1, 2 y 3 utilizando SQL
+
+4, 5 y 6  utilizando AR.
+
+Para aprobar debe hacer 2 sql bien y 2 AR bien.
+
+Tiene 45 minutos para resolver la tarea y adjuntar la solución. Contemple 4 o 5 minutos de los 45 para preparar y adjuntar su solución, luego de cerrada la tarea no podrá hacerlo.
+
+Modelo Físico
+
+Club=(IdClub,nombreClub,ciudad)
+
+Complejo=(IdComplejo,nombreComplejo, IdClub(fk))
+
+Cancha=(IdCancha,nombreCancha,IdComplejo(fk))
+
+Entrenador=(IdEntrenador, nombreEntrenador,fechaNacimiento, direccion)
+
+Entrenamiento=(IdEntrenamiento, fecha, IdEntrenador(fk), IdCancha(fk))
+
+
+1- Listar nombre, fecha nacimiento y dirección de entrenadores que hayan tenido entrenamientos durante 2020.
+
+2- Listar para cada cancha del complejo “Complejo 1” , la cantidad de entrenamientos que se realizaron durante el 2019. Informar nombre de la cancha y cantidad de entrenamientos.
+
+3- Listar los complejos donde haya realizado entrenamientos el entrenador “Jorge Gonzalez”.  Informar nombre de complejo, ordenar el resultado de manera ascendente.
+
+4- Listar nombre , fecha de nacimiento y dirección de entrenadores que hayan entrenado en la cancha “Cancha 1” y en la Cancha “Cancha 2”.
+
+5- Listar todos los clubes en los que entrena el entrenador “Marcos Perez”. Informar nombre del club y ciudad.
+
+6- Eliminar los entrenamientos del entrenador  ‘Juan Perez’.
